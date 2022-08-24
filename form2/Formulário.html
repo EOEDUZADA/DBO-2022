@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@1,700&display=swap" rel="stylesheet">   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@1,900&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap" rel="stylesheet">
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+
+  </head>
+  <body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">Claken</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Monitores</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Teclados</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Mousepads</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Mouse</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Registrar</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Claken</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+</header>
+
+
+    <section>
+        <div class="container">
+            <form id="formulario">
+                <div class="step step-1 active">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="nome" name="nome" />
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" />
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" />
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Confirme a senha:</label>
+                        <input type="password" id="confirmasenha" name="confirmasenha" />
+                    </div>
+                    <button type="button" onclick="verifica()" class="next-btn">Avançar</button>
+                </div>
+            
+                <div class="step step-2">
+                    <div class="form-group">
+                        <label for="prof">Profissao</label>
+                        <input type="prof" id="prof" name="prof" />
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" id="rs" name="estado" value="RS">
+                        <label for="rs">RS</label><br>
+                        <input type="radio" id="pr" name="estado" value="PR">
+                        <label for="pr">PR</label><br>
+                        <input type="radio" id="sc" name="estado" value="SC">
+                        <label for="SC">SC</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exp">Anos de Experiência</label>
+                        <input type="number" id="exp" name="exp" />
+                    </div>
+                    <button type="button" onclick="verifica2()" class="finalizar-btn">Avançar</button>
+                  
+                   
+                </div>
+                <div class="step step-3">
+
+
+<div id="dados">
+
+
+    <button type="submit" onclick="escreve()" class="submit-btn">Clique para verificar seus dados</button>
+
+    
+</div>
+
+
+                </div>
+            </form>
+        </div>
+        <div id="erro"></div>
+    </section>
+
+
+
+    <footer>
+
+        <!--The main area of the footer -->
+        <div class="footer-content">
+        
+           <h3>Siga nossas redes sociais</h3>
+          
+        <!--Footer's social icon-->
+           <ul class="socials">
+              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+              
+            </ul>
+        
+        
+
+<p>by Pros</p><br>
+        <p>&copy; claken imports 2022</p>
+        </div>
+        
+        
+        
+        </footer>
+
+
+
+
+</body>
+<script>
+    const steps = Array.from(document.querySelectorAll("form .step"));  
+ const nextBtn = document.querySelectorAll("form .next-btn");  
+ const prevBtn = document.querySelectorAll("form .previous-btn");  
+ const finalizarBtn = document.querySelectorAll("form .finalizar-btn");
+ const form = document.querySelector("form");  
+ nextBtn.forEach((button) => {  
+  button.addEventListener("click", () => {  
+   changeStep("next");  
+  });  
+ });  
+ prevBtn.forEach((button) => {  
+  button.addEventListener("click", () => {  
+   changeStep("prev");  
+  });  
+ });
+ 
+ 
+ finalizarBtn.forEach((button) => {  
+  button.addEventListener("click", () => {  
+   changeStep("finalizar");  
+  });  
+ });
+
+
+
+
+ form.addEventListener("submit", (e) => {  
+  e.preventDefault();  
+  form.reset()
+  const inputs = [];  
+  form.querySelectorAll("input").forEach((input) => {  
+   const { name, value } = input;  
+   inputs.push({ name, value });  
+  });  
+  console.log(inputs);  
+   
+ });  
+ function changeStep(btn) {  
+  let index = 0;  
+  const active = document.querySelector(".active");  
+  index = steps.indexOf(active);  
+  steps[index].classList.remove("active");  
+  if (btn === "next" && count==0 && count2==0) {  
+   index++;  
+  } else if (btn === "prev") {  
+   index--;  
+  }  
+
+  else if (btn === "finalizar" && count2==0) {  
+   index++;  
+  }  
+ 
+ 
+  steps[index].classList.add("active");  
+ }  
+
+ let formulario = document.querySelector("#formulario");
+let erro = document.querySelector("#erro");
+let count=0;
+let count2 = 0;
+let nome = document.querySelector("#nome");
+let cpf = document.querySelector("#cpf");
+let senha = document.querySelector("#senha");
+let confirmasenha = document.querySelector("#confirmasenha")
+let prof = document.querySelector("#prof");
+let dados = document.querySelector("#dados");
+let exp = document.querySelector("#exp");
+let estadors = document.querySelector("#rs");
+let estadopr = document.querySelector("#pr");
+let estadosc = document.querySelector("#sc");
+let dadonome = document.querySelectorAll("#Nome");
+let i = 0;
+
+
+console.log(dadonome)
+function verifica(e){
+    //apaga as mensagens de erro
+    if (document.querySelector("#erroNome") != null) {
+        document.querySelector("#erroNome").remove();
+        nome.style.borderColor = "black";
+        count--
+        
+    }
+    if (document.querySelector("#erroCpf") != null) {
+        document.querySelector("#erroCpf").remove();
+        cpf.style.borderColor = "black";
+        count--
+    }
+    if (document.querySelector("#erroSenha") != null) {
+        document.querySelector("#erroSenha").remove();
+        senha.style.borderColor = "black"; 
+        count--
+    }
+   
+    if (document.querySelector("#erroConfirmasenha") != null) {
+        document.querySelector("#erroConfirmasenha").remove();
+        confirmasenha.style.borderColor = "black"; 
+        count--
+    }
+
+
+   
+
+
+
+
+    //Chama os testes
+    count=0;
+    vNome(e);
+    vCpf(e);
+    vSenha(e);
+    vConfirmasenha(e);
+    
+    if ( count==0 )
+    {   
+    
+
+    }
+    else
+    {
+      
+    }
+}
+
+
+function vNome(e) {
+    
+    if (nome.value == "") {
+        let test= false;
+            let erroDiv = document.createElement("div");
+            erroDiv.setAttribute("id","erroNome");
+            let erroTexto = document.createTextNode("Preencha o campo nome.");
+            erroDiv.appendChild(erroTexto);
+            erro.appendChild(erroDiv);
+            let ln = document.createElement("br");
+            erro.appendChild(ln);
+            nome.style.borderColor = "red";
+            nome.focus();
+            count++;
+    }
+
+    
+
+    else { 
+
+    
+  
+    
+    }
+    
+}
+
+
+
+function vCpf(e) {
+    
+    if (cpf.value == "" || cpf.value.length != 11) {
+        
+            let erroDiv = document.createElement("div");
+            erroDiv.setAttribute("id","erroCpf");
+            let erroTexto = document.createTextNode("O campo cpf deve ter 11 caracteres.");
+            erroDiv.appendChild(erroTexto);
+            erro.appendChild(erroDiv);
+            let ln = document.createElement("br");
+            erro.appendChild(ln);
+            cpf.style.borderColor = "red";
+            cpf.focus();
+            count++;
+        }
+
+        else {
+            
+     
+        }
+    }
+function vSenha(e) {
+    
+    if (senha.value == "" || senha.value.length < 8 || senha.value.length > 8) {
+        
+                let erroDiv = document.createElement("div");
+                erroDiv.setAttribute("id","erroSenha");
+                let erroTexto = document.createTextNode("A senha precisa ter 8 dígitos");
+                erroDiv.appendChild(erroTexto);
+                erro.appendChild(erroDiv);
+                let ln = document.createElement("br");
+                erro.appendChild(ln);
+                senha.style.borderColor = "red";
+                senha.focus();
+                count++;
+        } 
+        
+        else {
+            
+        }
+    }
+
+    function vConfirmasenha(e) {
+    
+    if (confirmasenha.value != senha.value) {
+        
+                let erroDiv = document.createElement("div");
+                erroDiv.setAttribute("id","erroConfirmasenha");
+                let erroTexto = document.createTextNode("As senhas precisam ser iguais");
+                erroDiv.appendChild(erroTexto);
+                erro.appendChild(erroDiv);
+                let ln = document.createElement("br");
+                erro.appendChild(ln);
+                confirmasenha.style.borderColor = "red";
+                confirmasenha.focus();
+                count++;
+        }  
+    }
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function verifica2(e){
+    //apaga as mensagens de erro
+  
+    if (document.querySelector("#erroProf") != null) {
+        document.querySelector("#erroProf").remove();
+        prof.style.borderColor = "black"; 
+        count2--
+    }
+    if (document.querySelector("#erroExp") != null) {
+        document.querySelector("#erroExp").remove();
+        exp.style.borderColor = "black"; 
+        count2--
+    }
+    if (document.querySelector("#erroEstado") != null) {
+        document.querySelector("#erroEstado").remove();
+        count2--
+    }
+   
+   
+   
+//NOMES
+
+
+
+
+     
+
+
+       
+
+
+    //Chama os testes
+    count2=0;
+    vProf(e);
+    vExp(e);
+    vEstado(e);
+    
+    
+    if ( count2==0 )
+    { 
+    
+    
+
+    }
+    else
+    {
+        
+    }
+}
+
+
+function vProf(e) {
+    
+    if (prof.value == "") {
+            let erroDiv = document.createElement("div");
+            erroDiv.setAttribute("id","erroProf");
+            let erroTexto = document.createTextNode("Preencha o campo da Profissão");
+            erroDiv.appendChild(erroTexto);
+            erro.appendChild(erroDiv);
+            let ln = document.createElement("br");
+            erro.appendChild(ln);
+            prof.style.borderColor = "red";
+            prof.focus();
+            count2++;
+    }
+
+   
+
+}
+
+function vExp(e) {
+    
+    if (exp.value == "" || exp.value < 0 || exp.value > 50) {
+        
+                let erroDiv = document.createElement("div");
+                erroDiv.setAttribute("id","erroExp");
+                let erroTexto = document.createTextNode("A idade deve estar entre 0 e 50.");
+                erroDiv.appendChild(erroTexto);
+                erro.appendChild(erroDiv);
+                let ln = document.createElement("br");
+                erro.appendChild(ln);
+                exp.style.borderColor = "red";
+                exp.focus();
+                count2++;
+        } 
+        
+    }
+
+    function vEstado(e) {
+    
+ 
+
+       if (document.querySelector('input[name=estado]:checked')) {
+
+
+        
+        
+
+        count--
+        alert("marcado");
+
+       }
+
+       else {
+
+
+alert("não marcado")
+
+
+let erroDiv = document.createElement("div");
+                erroDiv.setAttribute("id","erroEstado");
+                let erroTexto = document.createTextNode("Preencha o estado");
+                erroDiv.appendChild(erroTexto);
+                erro.appendChild(erroDiv);
+                let ln = document.createElement("br");
+                erro.appendChild(ln);
+                exp.style.borderColor = "red";
+                exp.focus();
+                count2++;
+
+
+       }
+
+
+
+}
+
+function escreve() {
+
+
+
+     
+
+        let dadosDiv = document.createElement("div");
+        dadosDiv.setAttribute("id","Nome");
+        let dadosTexto = document.createTextNode("Nome: " + nome.value);
+        dadosDiv.appendChild(dadosTexto);
+        dados.appendChild(dadosDiv);
+
+
+       
+        let dadosTextoCPF = document.createTextNode("CPF: " + cpf.value);
+        dados.appendChild(dadosTextoCPF);
+      
+        
+        let dadosDiv2 = document.createElement("div");
+        dadosDiv.setAttribute("id","Exp");
+        let dadosTextoExp = document.createTextNode("Anos de Experiência: " + exp.value);
+        dadosDiv2.appendChild(dadosTextoExp);
+        dados.appendChild(dadosDiv2);
+
+        let dadosTextoSenha = document.createTextNode("Senha: " + senha.value);
+        dados.appendChild(dadosDiv);
+        dados.appendChild(dadosTextoSenha)
+
+        let dadosTextoProf = document.createTextNode("Profissão: " + prof.value);
+        dados.appendChild(dadosDiv);
+        dados.appendChild(dadosTextoProf)
+
+        let dadosTextoEstado = document.createTextNode("Estado: " + document.querySelector('input[name=estado]:checked').value);
+        let dadosDiv3 = document.createElement("div");
+        dadosDiv.setAttribute("id","Estado");
+        dados.appendChild(dadosDiv3);
+        dados.appendChild(dadosTextoEstado)
+
+
+    
+}
+
+
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+
+
+</script>
+</html>
