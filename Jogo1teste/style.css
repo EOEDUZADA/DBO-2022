@@ -1,0 +1,46 @@
+.fundo {
+    display: flex;
+     width: 100vh;
+     height: 50vh;
+     background-color: black;
+     text-align: contain;
+     background-image: url(./img/froggerbackground.png);
+     background-size: contain;
+     border: 5px solid green;
+	}
+.painel {
+    position: absolute; 
+     left:50px; 
+     text-align: center;
+     margin-top: 10%;
+
+}  
+#div2 {
+    position: absolute; 
+    top: 10vh; 
+    left: 70px; /* pode colocar em % ou vw para ser responsivo */
+    width: 50px; /* pode colocar em % ou vw para ser responsivo */
+    height: 50px; /* pode colocar em % ou vw para ser responsivo */
+    background-image: url(./img/froggercar.png);
+    background-size: cover;
+    text-align: center;
+}
+#div1 {
+    position: absolute;
+    top: 50vh;   /* pode colocar em % ou vw para ser responsivo */
+    left: 70px;  /* pode colocar em %  ou vw para ser responsivo */ 
+    width: 5vh; /* pode colocar em %  ou vw para ser responsivo */
+    height: 5vh; 
+    background-color: green; 
+    text-align: center;
+}
+#div3 {
+    position: absolute;
+    top: 20vh;  /* pode colocar em % ou vw para ser responsivo */
+    left: 70px; /* pode colocar em %  ou vw para ser responsivo */
+    width: 50px; /* pode colocar em % ou vw para ser responsivo */
+    height: 50px; 
+    background-image: url(./img/froggercar.png);
+    background-size: cover;
+    text-align: center;
+}

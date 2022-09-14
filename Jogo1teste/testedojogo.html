@@ -1,0 +1,265 @@
+<!DOCTYPE >
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+	<body>
+        <div class="titulo">
+            <h1>Frogger</h1>
+        </div>
+		<div class="fundo">
+			
+		
+		<div id="div2" >
+			cursor2
+		</div>
+		<div id="div1">
+			cursor1
+		</div>
+    </div>
+		<div class="painel">
+			
+				<hr>
+				<button type="button"  id="para"/>Parar cursor 1</button>
+				<button type="button"  id="para2" />Parar cursor 2</button><hr>
+				<button type="button"  id="acima" />Acima</button><br>
+				<button type="button"  id="esquerda"/>Esquerda</button>
+				<button type="button"  id="direita" />Direita</button><br>
+				<button type="button"  id="baixo" />Abaixo</button><hr>
+				<button type="button"  id="alturaMais" />+Altura</button>
+				<button type="button"  id="alturaMenos" />-Altura</button><hr>
+				<button type="button"  id="larguraMais" />+Largura</button>
+				<button type="button"  id="larguraMenos" />-Largura</button><hr>
+				<button type="button"  id="cor"/>Muda a cor</button>
+                <button type="button"  id="dif"/>Aumentar Dificuldade</button>
+				<hr>
+			
+		</div>
+		<script>
+            // MOVER CURSOR 2 AUTOMÁTICO
+			// Chama essa funçao a cada 15 milisegundos
+
+
+
+			function moverdireita(){
+				div2.style.left = parseInt(getComputedStyle(div2).left)+5; //getComputedStyle = pega o valor do CSS = left:15px e soma com +5
+				// move para a direita ou VELOCIDADE DO MOVIMENTO
+				if ( parseInt(getComputedStyle(div2).left) >= 300  - parseInt(getComputedStyle(div2).width) ){ //testa se chegou no fim = 500px = tamanho do fundo  // tentar mudar o px por % ou vh
+					clearInterval(m); // se chegar no limite = ele vai parar
+					m = setInterval ("moveresquerda()",15); // vai executar a função a cada 15 milisegundos para mover para a esquerda
+				}
+			}
+			function moveresquerda(){
+				div2.style.left = parseInt(getComputedStyle(div2).left)-5; //move para a esquerda ou VELOCIDADE DO MOVIMENTO
+				 //move para a esquerda ou VELOCIDADE DO MOVIMENTO
+				if ( parseInt(getComputedStyle(div2).left) <= 0 ){
+					clearInterval(m); // se chegar no limite = ele para
+					m = setInterval ("moverdireita()",15); // vai executar a função a cada 15 milisegundos = vai mover para a esquerda
+				}
+			}
+
+            // MOVER CURSOR ATRAVÉS DOS BOTOES
+
+
+
+
+			function move(Direcao) { // passamos a direção como parametro
+				if (contador != 0) { // para mudar de direcao ele precisa parar o setInterval = quando eu aperto um botao pela primeira vez = ele nao precisa parar
+					para();
+				}
+				if (Direcao == "direita") {
+					timer = setInterval("direita()",15); // vai comecar a se mover para a direita
+					contador ++; // utilizado para verificar se está parado
+				}
+
+				if (Direcao == "esquerda") {
+					timer = setInterval("esquerda()",15);  // vai comecar a se mover para a esquerda
+					contador ++; // utilizado para verificar se está parado
+				}
+
+				if (Direcao == "acima") {
+					timer = setInterval("acima()",15);  // vai comecar a se mover para cima
+					contador ++; // utilizado para verificar se está parado
+				}
+
+				if (Direcao == "baixo") {
+					timer = setInterval("baixo()",15);  // vai comecar a se mover para baixo
+					contador ++; // utilizado para verificar se está parado
+				}
+			}
+
+
+
+
+
+                     // MOVIMENTOS DO CURSOR QUE CONTROLAMOS
+
+
+
+
+            function direita() {
+				div1.style.left = parseInt(getComputedStyle(div1).left)+5; // pode ser usado para a VELOCIDADE DO MOVIMENTO
+				if ( parseInt(getComputedStyle(div1).left) >= 500  - parseInt(getComputedStyle(div1).left)){
+					clearInterval(timer);
+					timer = setInterval ("esquerda()",15);
+				}
+			}
+
+			function esquerda() {
+				div1.style.left = parseInt(getComputedStyle(div1).left)-5; // pode ser usado para a VELOCIDADE DO MOVIMENTO
+				if ( parseInt(div1.style.left) <= 0){
+					clearInterval(timer);
+					timer = setInterval ("direita()",15);
+				}
+			}
+
+			function baixo() {
+				div1.style.top = parseInt(getComputedStyle(div1).top)+5; // pode ser usado para a VELOCIDADE DO MOVIMENTO
+				if(parseInt(getComputedStyle(div1).top) >= 300 - parseInt(getComputedStyle(div1).height)){
+					clearInterval(timer);
+				timer = setInterval("acima()",15);
+			    }
+			}
+			function acima() {
+				div1.style.top = parseInt(getComputedStyle(div1).top)-5; // pode ser usado para a VELOCIDADE DO MOVIMENTO
+				if(parseInt(getComputedStyle(div1).top) <= 0 ){
+				clearInterval(timer);
+				timer = setInterval("baixo()",15);
+				}
+			}
+
+
+
+
+            // PARAR CURSORES
+
+
+
+			function para2(){
+				clearInterval(m); // PARA O CURSOR AUTOMATICO
+			}
+			function para() {
+				clearInterval(timer); // VAI PARAR OS MOVIMENTOS DO CURSOR QUE CONTROLAMOS
+			}
+
+
+
+			//ALTURA E LARGURA
+
+
+			
+
+			function altura(parametro) {
+				div1.style.height = parseInt(getComputedStyle(div1).height)+parametro;
+			}
+
+			function largura(parametro) {
+				div1.style.width = parseInt(getComputedStyle(div1).width)+parametro;
+			}
+			function cor(){ // SÃO SÓ 3 CORES
+			if(cont == 0){
+				document.getElementById("div1").style.backgroundColor="blue";
+				cont++;
+			}else{
+				if(cont == 1){
+					document.getElementById("div1").style.backgroundColor="orange";
+					cont++; // O COUNT AQUI É 2
+		   	    }else{
+		   	    if(cont == 2){ // se chegar na cor 2 = ele volta para a cor 0 É COMO SE FOSSE UM COUNT 3 PORQUE O IF ADICIONA UM COUNT++
+				    document.getElementById("div1").style.backgroundColor="yellow";
+				    cont = 0;
+		        	}
+		        }
+		    }
+
+		    }
+
+
+
+
+
+			    //COLISAO
+
+
+
+
+ //EXECUTANDO DESDE O INICIO
+
+
+
+
+
+				function colisao(){
+					if (((parseInt(getComputedStyle(div1).left) >= parseInt(getComputedStyle(div2).left))&&(parseInt(getComputedStyle(div1).left) <= parseInt(getComputedStyle(div2).left)+50))&&
+						((parseInt(getComputedStyle(div1).top) >= parseInt(getComputedStyle(div2).top))&&(parseInt(getComputedStyle(div1).top) <= parseInt(getComputedStyle(div2).top)+50))){
+							para2();
+							para();
+					}
+					if (((parseInt(getComputedStyle(div2).left) >= parseInt(getComputedStyle(div1).left))&&(parseInt(getComputedStyle(div2).left) <= parseInt(getComputedStyle(div1).left)+50))&&
+						((parseInt(getComputedStyle(div2).top) >= parseInt(getComputedStyle(div1).top))&&(parseInt(getComputedStyle(div2).top) <= parseInt(getComputedStyle(div1).top)+50))){
+							para2();
+							para();
+					}
+				}
+
+
+
+        
+// SE OS X E OS Y ESTÃO COINCIDINDO
+
+//Se um ponto está entre a largura e altura de div1 e div2
+
+// se os dois coincidirem = há uma colisao
+
+
+   //50px
+
+// O------  |       //left + 50      
+// |        |
+// |  d1    |
+// |------  |
+
+
+// O-----|
+// |  d2 \  
+// |-----\
+
+
+// se a ponta do d2
+//esta na ponta de d1 ou no meio de d1= left+50
+
+
+
+
+
+
+            //Ao carregar a página estas linhas são executadas. Funções que são chamadas a cada 15 e 5 milisegundos
+			let contador = 0;
+            let cont = 0;
+	   		let m = setInterval("moverdireita()", 15); // VAI MOVER O CURSOR SOZINHO
+			let n = setInterval("colisao()", 5); // TESTA A COLISÃO A CADA 5 SEGUNDOS
+            
+
+
+			//EVENTO DOS BOTOES
+
+            document.querySelector("#acima").addEventListener("click", ()=>{move('acima')});
+            document.querySelector("#esquerda").addEventListener("click",()=>{ move('esquerda')});
+            document.querySelector("#direita").addEventListener("click",()=>{ move('direita')});
+            document.querySelector("#baixo").addEventListener("click",()=>{ move('baixo')});
+            document.querySelector("#acima").addEventListener("click",()=>{ move('acima')});
+            document.querySelector("#dif").addEventListener("click",()=>{ cria()});
+            document.querySelector("#alturaMais").addEventListener("click", ()=>{altura(5)});
+            document.querySelector("#alturaMenos").addEventListener("click", ()=>{altura(-5)});
+            document.querySelector("#larguraMais").addEventListener("click", ()=>{largura(5)});
+            document.querySelector("#larguraMenos").addEventListener("click", ()=>{largura(-5)});
+            document.querySelector("#cor").addEventListener("click", ()=>{cor()});
+            document.querySelector("#para").addEventListener("click",()=>{ para()});
+            document.querySelector("#para2").addEventListener("click", ()=>{para2()});
+
+		</script>
+	</body>
+</html>
