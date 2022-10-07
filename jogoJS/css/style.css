@@ -1,0 +1,74 @@
+.fundo {
+     position: absolute;
+     top: 5vw;
+     left:5vw;
+     width: 90vw;
+     height: 42vw;
+     background-color: black;
+     text-align: center;
+     border: 5px solid rgb(255, 0, 0);
+	}
+.painel {
+    position: absolute;
+    margin-top: 60vw;
+    margin-left: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center
+   
+
+}  
+#div2 {
+    position: absolute; 
+    top: 18vw; 
+    left: 5vw; 
+    width: 5vw; 
+    height: 5vw; 
+    background-color: rgb(0, 217, 255); 
+    text-align: center;
+}
+#div1 {
+    position: absolute;
+    top: 18vw;
+    left: 15vw; 
+    width: 5vw; 
+    height: 5vw; 
+    background-color: green; 
+    text-align: center;
+}
+
+.nome {
+    position: absolute;
+    top: 90vw;
+display: flex;
+justify-content: flex-start;
+
+font-size: small;
+}
+
+#div3 {
+    position: absolute; 
+    top: 18vw; 
+    left: 90vw; 
+    width: 5vw; 
+    height: 5vw; 
+    background-color: rgb(55, 0, 128); 
+    text-align: center;
+}
+
+button {
+    outline: none;
+    float: right;
+    background: #000000;
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    padding: 12px 20px;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+}
