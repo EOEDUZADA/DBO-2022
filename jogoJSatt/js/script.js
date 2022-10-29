@@ -80,7 +80,7 @@ score++;
 				}
 			
 				
-if( largura < 700) {
+if( largura < 1200) {
 	
 
 
