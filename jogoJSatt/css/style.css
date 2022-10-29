@@ -1,8 +1,7 @@
 .fundo {
      position: absolute;
      top: 5vw;
-     left:5vw;
-     width: 100vw;
+     width: 95vw;
      height: 50vw;
      background-color: rgb(134, 158, 180);
      text-align: center;
