@@ -9,16 +9,6 @@
      background-color: red;
      text-align: center;
 	}
-.painel {
-    position: absolute;
-    margin-top: 60vw;
-    margin-left: 25vw;
-    display: flex;
-    justify-content: center;
-    align-items: center
-   
-
-}  
 #div2 {
     position: absolute; 
     top: 50%; 
