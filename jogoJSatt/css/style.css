@@ -1,5 +1,5 @@
 * {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 
@@ -10,7 +10,6 @@
      height: 50vw;
      background-color: rgb(134, 158, 180);
      text-align: center;
-     overflow-x: hidden;
 	}
 .painel {
     position: absolute;
