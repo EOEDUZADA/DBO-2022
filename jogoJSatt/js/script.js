@@ -78,18 +78,6 @@ console.log(largura);
 			function iniciar() {
 				
 				
-				jaFoiClicado = true;
-				
-				
-				setInterval((pulo) => {
-
-
-jaFoiClicado = false;
-
-
-
-},150);
-				clearInterval(pulo);
 				
 				clicarBotao()
 				pontinhos();
