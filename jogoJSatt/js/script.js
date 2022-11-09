@@ -64,19 +64,21 @@ console.log(largura);
 
 
 			function jump() {
-				if (dispatchEvent.classList != "jump") {
-					//first it checks if the dino is mid-jump. If not, it makes it jump.
-					div1.classList.add("jump");
-					setTimeout(function () {
-						div1.classList.remove("jump");
-						//removes the jump class from the dino once it has jumped so that it can jump again
-					}, 300);
-				}
+				
+				jaFoiclicado= true;
+				
+				clicarBotao();
+				
+				
 			}
 	
             // Mover cursor 1  - através dos botões
 			function iniciar() {
-				clicarBotao()
+	
+				
+				jump();
+				
+				
 				pontinhos();
 score.style.display="block";
 inicia.style.display="none";
