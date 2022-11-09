@@ -1,3 +1,4 @@
+
 var sompulo = new Audio();
 sompulo.src = 'pulo.wav';
 
@@ -65,11 +66,6 @@ console.log(largura);
 	
             // Mover cursor 1  - através dos botões
 			function iniciar() {
-				
-				
-				
-			 jaFoiClicado = true;
-				libera();
 				clicarBotao();
 				div1.style.top= 50 + "%";
 				pontinhos();
@@ -375,29 +371,21 @@ iniciar();
 
 
 
-function libera() {
-
-let liberarpulo = setInterval((liberarpulo) => {
 
 
-jaFoiClicado = false;
 
-
-},5);
-	
-}
 
 
 
  // começa com false pra poder ser clicado pela primeira vez
-var jaFoiClicado = true;
+var jaFoiClicado = false;
 function clicarBotao() {
   if (!jaFoiClicado) {
 	
 	move(acima)
     console.log("primeira vez");
     // substitui aqui dentro pelo seu código
-    jaFoiClicado = false;
+    jaFoiClicado = true;
   } 
 
 
