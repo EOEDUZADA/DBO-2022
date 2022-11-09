@@ -94,7 +94,7 @@ button {
 .iniciar {
 
 margin-top: 20%;
-z-index: +5;
+z-index: +55;
   display: flex;
   justify-content: center;
   align-items: flex-end;
