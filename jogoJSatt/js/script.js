@@ -304,13 +304,13 @@ score.innerHTML = "SCORE: " + contar ;
 		
 			console.log('Salva com sucesso.');
 			
-				 elmaximo =	lista_pessoas.sort(function(a, b){return b - a;});
+				 maximo =	lista_pessoas.sort(function(a, b){return b - a;});
 
 		
 
-			console.log(elmaximo[0])
-			console.log(elmaximo[1])
-			console.log(elmaximo[2])
+			console.log(maximo[0])
+			console.log(maximo[1])
+			console.log(maximo[2])
 			botaoreiniciar()
 
 
@@ -329,7 +329,7 @@ function recordes() {
 
 recorde1.style.display="block"
 
-recorde1.innerHTML = "BEST: " + elmaximo[0] + "          "+ elmaximo[1] + "          " + elmaximo [2] ;
+recorde1.innerHTML = "BEST: " + maximo[0] + "          "+ maximo[1] + "          " + maximo [2] ;
 
 
 
@@ -388,14 +388,14 @@ iniciar();
 
 
 
- // começa com false pra poder ser clicado pela primeira vez
+
 var jaFoiClicado = false;
 function clicarBotao() {
   if (!jaFoiClicado) {
 	
 	move(acima)
     console.log("primeira vez");
-    // substitui aqui dentro pelo seu código
+
     jaFoiClicado = true;
   } 
 
