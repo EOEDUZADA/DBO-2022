@@ -22,7 +22,7 @@ console.log(largura);
 			let inicio = false;
 			let reinicio = document.querySelector(".reiniciar")
 			let recorde1 = document.querySelector(".recorde1");
-			var fundo = document.querySelector(".fundo");
+			let fundo = document.querySelector(".fundo")
 
 
 	score.style.display = "none";
@@ -76,10 +76,7 @@ console.log(largura);
 	
             // Mover cursor 1  - através dos botões
 			function iniciar() {
-				
-				
-				
-				clicarBotao();
+				clicarBotao()
 				pontinhos();
 score.style.display="block";
 inicia.style.display="none";
