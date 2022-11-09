@@ -22,7 +22,7 @@ console.log(largura);
 			let inicio = false;
 			let reinicio = document.querySelector(".reiniciar")
 			let recorde1 = document.querySelector(".recorde1");
-			let fundo = document.querySelector(".fundo")
+			var fundo = document.querySelector(".fundo");
 
 
 	score.style.display = "none";
@@ -80,7 +80,7 @@ console.log(largura);
 				setInterval((pulo) => {
 
 
-fundo.setAtributte("onclick",clicarBotao(););
+fundo.setAtributte("onclick","clicarBotao();");
 
 
 
