@@ -77,10 +77,14 @@ console.log(largura);
             // Mover cursor 1  - através dos botões
 			function iniciar() {
 				
+				
+				jaFoiClicado = true;
+				
+				
 				setInterval((pulo) => {
 
 
-fundo.setAtributte("onclick",clicarBotao());
+jaFoiClicado = false;
 
 
 
