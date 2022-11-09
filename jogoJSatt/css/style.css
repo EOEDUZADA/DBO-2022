@@ -1,15 +1,13 @@
 
-
-
 .fundo {
      position: absolute;
      top: 5vw;
-	left:0vw;
-     width: 100vh;
-     height: 50vw;
-
-     background-color: red;
+     left:5vw;
+     width: 90vw;
+     height: 42vw;
+     background-color: black;
      text-align: center;
+     border: 5px solid rgb(255, 0, 0);
 	}
 #div2 {
     position: absolute; 
