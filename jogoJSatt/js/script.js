@@ -89,6 +89,7 @@ jaFoiClicado = false;
 
 
 },150);
+				clearInterval(pulo);
 				
 				clicarBotao()
 				pontinhos();
