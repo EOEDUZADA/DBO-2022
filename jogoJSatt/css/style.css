@@ -10,13 +10,6 @@
      border: 2px solid blueviolet;
      
 	}
-.painel {
-    position: absolute;
-    margin-top: 60vw;
-    margin-left: 25vw;
-    display: flex;
-    justify-content: center;
-    align-items: center
    
 
 }  
