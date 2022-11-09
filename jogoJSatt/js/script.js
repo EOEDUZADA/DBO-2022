@@ -65,11 +65,8 @@ console.log(largura);
 	
             // Mover cursor 1  - através dos botões
 			function iniciar() {
-				
-			   document.querySelector("#fundo").addEventListener("click", ()=>{move('acima')});
-				
 				clicarBotao();
-				
+				div1.style.top= 50 + "%";
 				pontinhos();
 score.style.display="block";
 inicia.style.display="none";
@@ -384,7 +381,7 @@ var jaFoiClicado = false;
 function clicarBotao() {
   if (!jaFoiClicado) {
 	
-	
+	move(acima)
     console.log("primeira vez");
     // substitui aqui dentro pelo seu código
     jaFoiClicado = true;
