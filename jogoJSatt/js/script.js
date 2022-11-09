@@ -65,6 +65,8 @@ console.log(largura);
 	
             // Mover cursor 1  - através dos botões
 			function iniciar() {
+				
+				var jaFoiClicado = false;
 				clicarBotao();
 				div1.style.top= 50 + "%";
 				pontinhos();
@@ -377,7 +379,7 @@ iniciar();
 
 
  // começa com false pra poder ser clicado pela primeira vez
-var jaFoiClicado = false;
+var jaFoiClicado = true;
 function clicarBotao() {
   if (!jaFoiClicado) {
 	
