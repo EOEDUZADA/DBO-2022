@@ -52,14 +52,6 @@ background-image: url(../icon/obstaculo.png);
     text-align: center;
 }
 
-.nome {
-    position: absolute;
-    top: 90vw;
-display: flex;
-justify-content: center;
-
-font-size: small;
-}
 
 #div3 {
     position: absolute; 
