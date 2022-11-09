@@ -68,7 +68,7 @@ console.log(largura);
 			function iniciar() {
 	
 				
-			let liberarpulo = setInterval("clicarBotao()", 5);
+			liberarpulo = setInterval("clicarBotao()", 5);
 				
 				
 				pontinhos();
@@ -414,6 +414,7 @@ function clicarBotao() {
 	   		var m ="" //Funções que são chamadas a cada 15 e 5 milisegundos
 			let n = setInterval("colisao()", 5);
 			let contadorpulo = 0;
+let liberarpulo="";
 			
 			
             
