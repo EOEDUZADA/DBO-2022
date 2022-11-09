@@ -80,7 +80,7 @@ console.log(largura);
 				setInterval((pulo) => {
 
 
-fundo.setAtributte("onclick","clicarBotao();");
+fundo.setAtributte("onclick",clicarBotao(););
 
 
 
