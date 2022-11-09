@@ -54,7 +54,7 @@ console.log(largura);
 					
 					velocidade++;
 					velocidade++;
-					div2.style.left= +90 + "%";
+					div2.style.left= +100 + "%";
 					
 				
 			
@@ -62,14 +62,21 @@ console.log(largura);
 				}
 			}
 
+
+			function jump() {
+				if (dispatchEvent.classList != "jump") {
+					//first it checks if the dino is mid-jump. If not, it makes it jump.
+					div1.classList.add("jump");
+					setTimeout(function () {
+						div1.classList.remove("jump");
+						//removes the jump class from the dino once it has jumped so that it can jump again
+					}, 300);
+				}
+			}
 	
             // Mover cursor 1  - através dos botões
 			function iniciar() {
-				
-			   document.querySelector("#fundo").addEventListener("click", ()=>{move('acima')});
-				
-				clicarBotao();
-				
+				clicarBotao()
 				pontinhos();
 score.style.display="block";
 inicia.style.display="none";
@@ -85,7 +92,7 @@ if( largura < 1200) {
 	
 
 	clearInterval(m);
-					m = setInterval ("moveresquerda()",30 - velocidade );
+					m = setInterval ("moveresquerda()",50 - velocidade );
 						
 
 }
@@ -283,25 +290,25 @@ score.innerHTML = "SCORE: " + contar ;
 			
 		
 			// Pega a lista já cadastrada, se não houver vira um array vazio
-			var pontuacao_recorde = JSON.parse(localStorage.getItem('pontuacao-recorde') || '[]');
+			var lista_pessoas = JSON.parse(localStorage.getItem('lista-pessoas') || '[]');
 			// Adiciona pessoa ao cadastro
-			pontuacao_recorde.push(
+			lista_pessoas.push(
 				nome,
 	
 			);
 		
 			// Salva a lista alterada
-			localStorage.setItem("pontuacao-recorde", JSON.stringify(pontuacao_recorde));
+			localStorage.setItem("lista-pessoas", JSON.stringify(lista_pessoas));
 		
 			console.log('Salva com sucesso.');
 			
-				 maximo =	pontuacao_recorde.sort(function(a, b){return b - a;});
+				 elmaximo =	lista_pessoas.sort(function(a, b){return b - a;});
 
 		
 
-			console.log(maximo[0])
-			console.log(maximo[1])
-			console.log(maximo[2])
+			console.log(elmaximo[0])
+			console.log(elmaximo[1])
+			console.log(elmaximo[2])
 			botaoreiniciar()
 
 
@@ -320,7 +327,7 @@ function recordes() {
 
 recorde1.style.display="block"
 
-recorde1.innerHTML = "BEST: " + maximo[0] + "          "+ maximo[1] + "          " + maximo [2] ;
+recorde1.innerHTML = "BEST: " + elmaximo[0] + "          "+ elmaximo[1] + "          " + elmaximo [2] ;
 
 
 
@@ -384,7 +391,7 @@ var jaFoiClicado = false;
 function clicarBotao() {
   if (!jaFoiClicado) {
 	
-	
+	move(acima)
     console.log("primeira vez");
     // substitui aqui dentro pelo seu código
     jaFoiClicado = true;
