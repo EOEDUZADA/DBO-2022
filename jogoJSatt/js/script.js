@@ -79,7 +79,7 @@ console.log(largura);
 				
 				
 				
-				clicarBotao()
+				clicarBotao();
 				pontinhos();
 score.style.display="block";
 inicia.style.display="none";
