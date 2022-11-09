@@ -54,7 +54,7 @@ console.log(largura);
 					
 					velocidade++;
 					velocidade++;
-					div2.style.left= +95 + "%";
+					div2.style.left= +98 + "%";
 					
 				
 			
