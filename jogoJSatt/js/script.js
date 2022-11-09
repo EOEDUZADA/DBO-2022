@@ -62,21 +62,11 @@ console.log(largura);
 				}
 			}
 
-
-			function jump() {
-				if (dispatchEvent.classList != "jump") {
-					//first it checks if the dino is mid-jump. If not, it makes it jump.
-					div1.classList.add("jump");
-					setTimeout(function () {
-						div1.classList.remove("jump");
-						//removes the jump class from the dino once it has jumped so that it can jump again
-					}, 300);
-				}
-			}
 	
             // Mover cursor 1  - através dos botões
 			function iniciar() {
-				clicarBotao()
+				clicarBotao();
+				div1.style.top= 50 + "%";
 				pontinhos();
 score.style.display="block";
 inicia.style.display="none";
@@ -290,25 +280,25 @@ score.innerHTML = "SCORE: " + contar ;
 			
 		
 			// Pega a lista já cadastrada, se não houver vira um array vazio
-			var lista_pessoas = JSON.parse(localStorage.getItem('lista-pessoas') || '[]');
+			var pontuacao_recorde = JSON.parse(localStorage.getItem('pontuacao-recorde') || '[]');
 			// Adiciona pessoa ao cadastro
-			lista_pessoas.push(
+			pontuacao_recorde.push(
 				nome,
 	
 			);
 		
 			// Salva a lista alterada
-			localStorage.setItem("lista-pessoas", JSON.stringify(lista_pessoas));
+			localStorage.setItem("pontuacao-recorde", JSON.stringify(pontuacao_recorde));
 		
 			console.log('Salva com sucesso.');
 			
-				 elmaximo =	lista_pessoas.sort(function(a, b){return b - a;});
+				 maximo =	pontuacao_recorde.sort(function(a, b){return b - a;});
 
 		
 
-			console.log(elmaximo[0])
-			console.log(elmaximo[1])
-			console.log(elmaximo[2])
+			console.log(maximo[0])
+			console.log(maximo[1])
+			console.log(maximo[2])
 			botaoreiniciar()
 
 
@@ -327,7 +317,7 @@ function recordes() {
 
 recorde1.style.display="block"
 
-recorde1.innerHTML = "BEST: " + elmaximo[0] + "          "+ elmaximo[1] + "          " + elmaximo [2] ;
+recorde1.innerHTML = "BEST: " + maximo[0] + "          "+ maximo[1] + "          " + maximo [2] ;
 
 
 
