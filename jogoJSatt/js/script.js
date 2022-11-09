@@ -76,7 +76,7 @@ console.log(largura);
 			function iniciar() {
 	
 				
-				jump();
+			let liberarpulo = setInterval("clicarBotao()", 20);
 				
 				
 				pontinhos();
@@ -388,14 +388,15 @@ iniciar();
 
 
 
- // começa com false pra poder ser clicado pela primeira vez
+
 var jaFoiClicado = false;
 function clicarBotao() {
   if (!jaFoiClicado) {
 	
 	move(acima)
     console.log("primeira vez");
-    // substitui aqui dentro pelo seu código
+ 
+	  clearInterval(liberarpulo);
     jaFoiClicado = true;
   } 
 
