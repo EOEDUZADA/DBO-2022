@@ -1,4 +1,3 @@
-
 var sompulo = new Audio();
 sompulo.src = 'pulo.wav';
 
