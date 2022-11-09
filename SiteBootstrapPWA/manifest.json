@@ -3,7 +3,7 @@
 	"name": "Claken",
 	"lang": "en",
 	"description": "O site do Claken",
-	"start_url": "/index.html",
+	"start_url": "./index.html",
 	"background_color": "#000000",
 	"theme_color": "#000000",
 	"dir": "ltr",
