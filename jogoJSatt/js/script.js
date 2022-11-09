@@ -54,7 +54,7 @@ console.log(largura);
 					
 					velocidade++;
 					velocidade++;
-					div2.style.left= +100 + "%";
+					div2.style.left= +95 + "%";
 					
 				
 			
@@ -92,7 +92,7 @@ if( largura < 1200) {
 	
 
 	clearInterval(m);
-					m = setInterval ("moveresquerda()",50 - velocidade );
+					m = setInterval ("moveresquerda()",30 - velocidade );
 						
 
 }
