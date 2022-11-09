@@ -63,20 +63,12 @@ console.log(largura);
 			}
 
 
-			function jump() {
-				
-				jaFoiclicado= true;
-				
-				clicarBotao();
-				
-				
-			}
 	
             // Mover cursor 1  - através dos botões
 			function iniciar() {
 	
 				
-			let liberarpulo = setInterval("clicarBotao()", 20);
+			let liberarpulo = setInterval("clicarBotao()", 5);
 				
 				
 				pontinhos();
@@ -388,7 +380,7 @@ iniciar();
 
 
 
-
+  clearInterval(liberarpulo);
 var jaFoiClicado = false;
 function clicarBotao() {
   if (!jaFoiClicado) {
@@ -396,7 +388,7 @@ function clicarBotao() {
 	move(acima)
     console.log("primeira vez");
  
-	  clearInterval(liberarpulo);
+	
     jaFoiClicado = true;
   } 
 
