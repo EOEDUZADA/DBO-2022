@@ -54,7 +54,7 @@ console.log(largura);
 					
 					velocidade++;
 					velocidade++;
-					div2.style.left= +98 + "%";
+					div2.style.left= +90 + "%";
 					
 				
 			
@@ -63,14 +63,20 @@ console.log(largura);
 			}
 
 
+			function jump() {
+				if (dispatchEvent.classList != "jump") {
+					//first it checks if the dino is mid-jump. If not, it makes it jump.
+					div1.classList.add("jump");
+					setTimeout(function () {
+						div1.classList.remove("jump");
+						//removes the jump class from the dino once it has jumped so that it can jump again
+					}, 300);
+				}
+			}
 	
             // Mover cursor 1  - através dos botões
 			function iniciar() {
-	
-				
-			liberarpulo = setInterval("clicarBotao()", 5);
-				
-				
+				clicarBotao()
 				pontinhos();
 score.style.display="block";
 inicia.style.display="none";
@@ -380,15 +386,14 @@ iniciar();
 
 
 
-  clearInterval(liberarpulo);
+ // começa com false pra poder ser clicado pela primeira vez
 var jaFoiClicado = false;
 function clicarBotao() {
   if (!jaFoiClicado) {
 	
 	move(acima)
     console.log("primeira vez");
- 
-	
+    // substitui aqui dentro pelo seu código
     jaFoiClicado = true;
   } 
 
@@ -414,7 +419,6 @@ function clicarBotao() {
 	   		var m ="" //Funções que são chamadas a cada 15 e 5 milisegundos
 			let n = setInterval("colisao()", 5);
 			let contadorpulo = 0;
-let liberarpulo="";
 			
 			
             
