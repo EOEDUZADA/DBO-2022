@@ -76,6 +76,16 @@ console.log(largura);
 	
             // Mover cursor 1  - através dos botões
 			function iniciar() {
+				
+				setInterval((pulo) => {
+
+
+fundo.setAtributte("onclick",move(acima););
+
+
+
+},150);
+				
 				clicarBotao()
 				pontinhos();
 score.style.display="block";
