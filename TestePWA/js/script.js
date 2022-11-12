@@ -1,44 +1,56 @@
-var CACHE_NAME = 'static-v1';
+let cacheName = "OpenGithubPWA";// 👈 any unique name
 
-self.addEventListener('install', function (event) {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function (cache) {
-      return cache.addAll([
-        '/DBO-2022/TestePWA/',
-        '/index.html',
-        '/styles.css',
-        '/script.js',
-        '/manifest.json',
-        '/vendor.js',
-      ]);
-    })
-  )
-});
+let filesToCache = [
+  "/OpenPWA/", // 👈 your repository name , both slash are important
+  "service-worker.js",
+  "js/main.js",
+  "js/install-handler.js",
+  "js/settings.js",
+  "css/main.css",
+  "assets/icons/icon.png",
+  "manifest.json"
+  // add your assets here 
+  // ❗️❕donot add config.json here ❗️❕
+];
 
-self.addEventListener('activate', function activator(event) {
-  event.waitUntil(
-    caches.keys().then(function (keys) {
-      return Promise.all(keys
-        .filter(function (key) {
-          return key.indexOf(CACHE_NAME) !== 0;
-        })
-        .map(function (key) {
-          return caches.delete(key);
-        })
-      );
-    })
-  );
+self.addEventListener("install", function (event) {
+  event.waitUntil(caches.open(cacheName).then((cache) => {
+    console.log('installed successfully')
+    return cache.addAll(filesToCache);
+  }));
 });
 
 self.addEventListener('fetch', function (event) {
-  event.respondWith(
-    caches.match(event.request).then(function (cachedResponse) {
-      return cachedResponse || fetch(event.request);
-    })
+
+  if (event.request.url.includes('clean-cache')) {
+    caches.delete(cacheName);
+    console.log('Cache cleared')
+  }
+
+  event.respondWith(caches.match(event.request).then(function (response) {
+    if (response) {
+      console.log('served form cache')
+    } else {
+      console.log('Not serving from cache ', event.request.url)
+    }
+    return response || fetch(event.request);
+  })
   );
 });
 
-
+self.addEventListener('activate', function (e) {
+  e.waitUntil(
+    caches.keys().then(function (keyList) {
+      return Promise.all(keyList.map(function (key) {
+        if (key !== cacheName) {
+          console.log('service worker: Removing old cache', key);
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+  return self.clients.claim();
+});
 
 
 
