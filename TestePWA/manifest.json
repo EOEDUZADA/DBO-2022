@@ -5,8 +5,8 @@
   "background_color": "#022947",
   "display": "fullscreen",
   "orientation": "portrait",
-  "scope": "/eoeduzada.github.io/DBO-2022/TestePWA/index.html",
-  "start_url": "/index.html",
+  "scope": "/eoeduzada.github.io/DBO-2022/TestePWA/index.html/",
+  "start_url": "/eoeduzada.github.io/DBO-2022/TestePWA/index.html/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
