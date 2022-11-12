@@ -4,7 +4,7 @@ self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll([
-        '/TestePWA/',
+        '/DBO-2022/TestePWA/',
         '/index.html',
         '/styles.css',
         '/script.js',
