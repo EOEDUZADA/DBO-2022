@@ -284,13 +284,13 @@ let fundo = document.querySelector(".fundo")
 		
 function baixo() {
 			let div1Top= parseInt(getComputedStyle(div1).top);
-			let fundoHeight= parseInt(getComputedStyle(chao).height)-15;
+			let fundoHeight= parseInt(getComputedStyle(chao).height)-10;
 			let div1Height= parseInt(getComputedStyle(div1).height);
 
 
 			if(largura > 600) {
 
-
+                                
 				div1.style.top = div1Top+12;
 
 			}
