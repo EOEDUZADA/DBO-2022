@@ -1,11 +1,11 @@
 //constantes utilizadas
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
-  './index.html',
-  './css/style.css',
-  './icon/logo.png',
-  './js/script.js',
-  './manifest.json'
+  '/index.html',
+  '/css/style.css',
+  '/icon/logo.png',
+  '/js/script.js',
+  '/manifest.json'
 ];
 
 //-----------Ao instalar-------
