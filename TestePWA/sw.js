@@ -1,37 +1,41 @@
-//constantes utilizadas
-const CACHE_NAME = 'my-site-cache-v1';
-const urlsToCache = [
-  './index.html',
-  './css/style.css',
-  './icon/logo.png',
-  './js/script.js',
-  './manifest.json'
-];
+var CACHE_NAME = 'static-v1';
 
-//-----------Ao instalar-------
-self.addEventListener('install', event =>
-  event.waitUntil(cacheResources())
-)
+self.addEventListener('install', function (event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(function (cache) {
+      return cache.addAll([
+        '/',
+        '/index.html',
+        '/styles.css',
+        '/script.js',
+        '/manifest.json',
+      ]);
+    })
+  )
+});
 
-async function cacheResources() {
-  const cache = await caches.open(CACHE_NAME)
-  return cache.addAll(urlsToCache)
-}
+self.addEventListener('activate', function activator(event) {
+  event.waitUntil(
+    caches.keys().then(function (keys) {
+      return Promise.all(keys
+        .filter(function (key) {
+          return key.indexOf(CACHE_NAME) !== 0;
+        })
+        .map(function (key) {
+          return caches.delete(key);
+        })
+      );
+    })
+  );
+});
 
-//-----Ao fazer uma requisição (fetch)-----
-
-self.addEventListener('fetch', event =>
-  event.respondWith(cachedResource(event.request))
-)
-
-async function cachedResource (req) {
-  const cache = await caches.open(CACHE_NAME)
-  const response = await cache.match(req)
-  if (response) {
-    return response;
-  }
-  return fetch(req);
-}
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    caches.match(event.request).then(function (cachedResponse) {
+      return cachedResponse || fetch(event.request);
+    })
+  );
+});
 
 
 
