@@ -8,6 +8,16 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="manifest" crossorigin="use-credentials" href="./manifest.json"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+	
+	<script defer src="./js/script.js"></script>
+	<script>
+		if ('serviceWorker' in navigator) {
+		  navigator.serviceWorker.register('./sw.js')
+			 .then(function () {console.log('service worker registered');})
+			 .catch(function () {console.log('service worker failed'); });
+		}
+	</script>
+	
     </head>
 	<body>
 		<div class="nome"><h1>JUMPER 2000</h1></div>
@@ -47,16 +57,5 @@
 				
 			
 		</div>
-		<script>
-			
-		if ('serviceWorker' in navigator) {
-   navigator.serviceWorker.register("./sw.js");
-}
-			
-
-			
-		</script>
-		<script src="./js/script.js"></script>
-
 	</body >
 </html>
