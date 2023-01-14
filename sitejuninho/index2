@@ -1,0 +1,227 @@
+<!DOCTYPE html public>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumper</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="manifest" crossorigin="use-credentials" href="./manifest.json" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+	  <link rel="preconnect" href="https://fonts.googleapis.com">
+	  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	  <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@1,500&display=swap" rel="stylesheet"> 
+    <script defer src="./js/script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js').then(function() {
+          console.log('service worker registered');
+        }).catch(function() {
+          console.log('service worker failed');
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="nome">
+      <h1>JUMPER 2000</h1>
+    </div>
+    <div class="fundo" id="fundo" onclick="clicarBotao()">
+      <span class="score">0</span>
+      <div id="div2"></div>
+      <div id="div1"></div>
+      <div class="cactus"></div>
+      <div class="iniciar" onclick="iniciar()">INICIAR</div>
+      <div class="reiniciar" onclick="reiniciar()">REINICIAR</div>
+      <div class="mostrarPontos"></div>
+      <div id="chao"></div>
+      <div class="recorde" onclick="recordes()"></div>
+
+</div>
+      <div class="bootstrap">
+
+
+<!--nav-->
+<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+  
+      <div class="carousel-caption d-md-block">
+          <h5>É os 18tou meu mano!</h5>
+         
+        
+      </div>
+      
+              
+      <img src="./img/3.jpg" class="d-block w-100" alt="fallen">
+    </div>
+    <div class="carousel-item">
+
+       <div class="carousel-caption d-md-block">
+          <h5>É os 18tou meu mano!</h5>
+         
+      </div>
+      
+      <img src="./img/juniornovo.jpg" class="d-block w-100" alt="fnx">
+    </div>
+    <div class="carousel-item">
+
+      <div class="carousel-caption d-md-block">
+        <h5>É os 18tou meu mano!</h5>
+        
+    </div>
+
+      <img src="./img/antigassa.jpg" class="d-block w-100" alt="major">
+    </div>
+  </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container mt-5 mb-3 g-2">
+
+<!-- Portfolio Item Heading -->
+<h1 
+data-toggle="animation" 
+data-animation-start="onScroll"
+data-animation="slide-in-right"
+class="my-1 ms-1">Finge que já é dia 15,mano!kk
+</h1>
+
+<!-- Portfolio Item Row -->
+<div class="row">
+
+<div class="col-sm-8">
+<div class="embed-responsive embed-responsive-21by9">
+<img class=" mt-5 mb-5 rounded" src= "./img/WhatsApp Image 2023-01-07 at 8.38.54 PM (2).jpeg" id="fotoinicio"
+</div>
+
+
+
+<!-- textinho -->
+
+<div class="col-sm-12 ">
+
+<p class="textinho1"> Bom, meu mano, eu estou aqui para te desejar tudo de melhor na sua vida, tu sabes que eu espero e torço para você realizar todos os seus objetivos e sonhos que você almeja na sua vida. Eu sei que é bem dificil de eu demonstrar os meus sentimentos e o que eu sinto, é um certo bloqueio que eu tenho que me dificulta em externalizar isso.
+Hoje (ou amanhã), quero que você aproveite esse seu dia especial, você precisa e merece ser feliz, não hesite em chamar os seus amigos para curtir, é uma experiência que passa e depois só ficam os arrependimentos.
+Então é isso, parceiro! Tu sabe que a nossa relação e energia é totalmente real, uma conexão que vem desde o nascimento e que vai ser para toda a vida! Vocês me ajudam a continuar tentando e seguindo a minha vida todos os dias, esquecendo dos males que tentam me por para baixo.
+</p>
+
+
+
+</div>
+
+</div>
+</div>
+<!-- Page Content MOMENTOS ESPECIAIS -->
+<div class="container-fluid mt-5 mb-3 g-2 me-4  background-momentos-especiais" id="momentinhos">
+
+<!-- Portfolio Item Heading -->
+<h1 
+data-toggle="animation" 
+data-animation-start="onScroll"
+data-animation="slide-in-right"
+class=" ms-2 momentos-especiais">Momentos Especiais
+</h1>
+
+<!-- Portfolio Item Row -->
+<div class="row">
+
+<div class="col-sm-8">
+<div class="embed-responsive embed-responsive-21by9">
+<img class="ms-1 rounded" src= "./img/WhatsApp Image 2023-01-07 at 8.38.56 PM (1).jpeg" id="fotomomentos"
+</div>
+
+<img class="ms-1 mt-5 mb-3 rounded" src= "./img/WhatsApp Image 2023-01-07 at 8.38.54 PM.jpeg" id="fotomomentos"
+
+
+<div class="col-sm-4 mt-5">
+
+<p class="textinho1 mt-3">Quando a gente ainda podia ir na cama elástica kk</p>
+
+</div>
+
+<div class="col-sm-8">
+<div class="embed-responsive embed-responsive-21by9">
+<img src= "./img/euejuninhosla.jpg" class="z-depth-5 rounded mb-1 mt-3" id="fotonos3" alt=".">
+</div>
+
+
+<div class="embed-responsive embed-responsive-21by9">
+<img class="mt-4 shadow-lg rounded" src= "./img/WhatsApp Image 2023-01-07 at 8.38.57 PM.jpeg" id="fotonos3"
+</div>
+
+<div class="embed-responsive embed-responsive-21by9">
+<img class=" mt-5 rounded" src= "./img/carnavalassustado.jpg" id="fotonos3"
+</div>
+
+<div class="embed-responsive embed-responsive-21by9">
+<img class=" mt-5 rounded" src= "./img/foto nos 3.jpg" id="fotonos3"
+</div>
+
+<div class="embed-responsive embed-responsive-21by9">
+<img class=" mt-5 rounded" src= "./img/piscina.jpg" id="fotonos3"
+</div>
+
+<div class="embed-responsive embed-responsive-21by9">
+<img class=" mt-5 rounded" src= "./img/coracao.jpg" id="fotonos3"
+</div>
+
+
+<div class="embed-responsive embed-responsive-21by9">
+<img class=" mt-5 rounded" src= "./img/ensaios.jpg" id="fotonos3"
+</div>
+
+<div class="col-sm-4 mt-4">
+
+<p class="textinho1">Ensaiando aquela coreografiazinha braba kk</p>
+
+
+</div>
+</div>
+
+<div class="container-fluid mt-5 mb-3 g-2 me-4  background-momentos-especiais" id="momentinhos">
+
+<!-- Portfolio Item Row -->
+<div class="row">
+
+
+<div class="col-sm-8">
+<div class="embed-responsive embed-responsive-21by9">
+<img class="mt-4 rounded" src= "./img/WhatsApp Image 2023-01-10 at 3.06.51 AM.jpeg" id="details"
+</div>
+
+
+
+
+
+<div class="row2 mt-4">
+<div class="col-sm-12">
+<p class="textinho2 mt-5">Eu realmente não sei definir em palavras o que é a nossa relação, é algo que não se encontra palavras suficientes para definir, algo que está cada vez mais forte desde quando nos conhecemos, uma conexão que não se desgastou com o tempo e só vai ficando casa vez mais sentimental e duradoura. A gente já viveu muitos momentos felizes, também já fizemos muita merda juntos e observamos cada um crescer, se decepcionar e até mesmo conseguir um dos maiores sonhos que compartilhávamos juntos ( o pczinho né pae). Agora, é o momento de aproveitarmos esse ciclo que se inicia, a tendência é de tudo mudar daqui para a frente mas devemos ficar felizes pelos momentos bons e grandes lembranças. Obrigado
+por você ser meu irmão, te amo!</p>
+</div>
+
+  
+<!-- Footer -->
+
+</div>
+</div>
+
+<h1 
+data-toggle="animation" 
+data-animation-start="onScroll"
+data-animation="slide-in-right"
+class="teamo mt-5 ms-1 ">Te amo, mano! &#128151
+</h1>
+   
+
+</div>
+
+
+    
+  </body>
+</html>
